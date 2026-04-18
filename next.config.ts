@@ -1,16 +1,21 @@
-// next.config.ts / next.config.js
-import type { NextConfig } from "next";
+// next.config.ts
+// next.config.js
+const isGithubPages = process.env.DEPLOY_ENV === 'GH_PAGES';
+const repoName = 'shoshohh.github.io'; // ← あなたのリポジトリ名（ユーザー名.github.io）を設定
+
+module.exports = {
+  output: 'export',
+  trailingSlash: true,
+};
+
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /** ★ 静的エクスポートを有効化 */
-  output: "export",
-
-  /** ★ 画像最適化 API を使わない（GH Pages は Node サーバを持たないため） */
+  output: 'export',
+  trailingSlash: true,
+  assetPrefix: '.',
   images: {
     unoptimized: true,
-
-    /* ↓ remotePatterns は残しておいても問題なし。
-       unoptimized:true が立っていると build 時には無視されるだけです。 */
     remotePatterns: [
       {
         protocol: "https",
@@ -18,6 +23,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-};
+  // ✅ 以下のように publicPath を相対パスにしたい場合、basePath 設定は不要です
+  // basePath: "/ShoShohh.github.io" // サブディレクトリにホストするなら必要
+}
 
-export default nextConfig;
+export default nextConfig

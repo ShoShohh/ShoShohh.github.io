@@ -49,7 +49,7 @@ I am also involved in <strong>advocacy to raise awareness about bone marrow tran
   twitterUsername: "simplesho_CLT",
   blogUrl: "https://note.com/sho_77",
   cvUrl: "https://raw.githubusercontent.com/ShoShohh/resume/main/resume.pdf",
-  imageUrl: "/your-image.JPG", // publicに画像を置けばOK
+  imageUrl: "/your-image.JPG",
   googleScholarUrl: "https://scholar.google.com/...",
   kaggleUrl: "https://www.kaggle.com/sakaisho",
 };
