@@ -1,1 +1,14 @@
+# Next.js build / local export (Pages serves docs/ only)
+.next/
+out/
+
+# dependencies
 node_modules/
+
+# misc / OS
+.DS_Store
+**/.DS_Store
+*.log
+
+# editor / duplicate scratch files
+src/app/ja/page 2.tsx
