@@ -7,6 +7,11 @@ export function PublicationEntry({
 }: {
   publication: Publication;
 }) {
+  const highlightedAuthors = publication.authors.replace(
+    /Sho Sakai/g,
+    "<strong>Sho Sakai</strong>"
+  );
+
   return (
     <div className="flex flex-col sm:flex-row gap-6">
       {publication.imageUrl && (
@@ -35,7 +40,10 @@ export function PublicationEntry({
           )}
         </div>
         <h3 className="font-serif text-md mb-3">{publication.title}</h3>
-        <p className="text-sm text-zinc-600 mb-4">{publication.authors}</p>
+        <p
+          className="text-sm text-zinc-600 mb-4"
+          dangerouslySetInnerHTML={{ __html: highlightedAuthors }}
+        />
         <div className="flex flex-row gap-6">
           {publication.paperUrl && (
             <a

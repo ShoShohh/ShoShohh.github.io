@@ -153,6 +153,22 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
               </a>
             </>
           )}
+          {aboutMe.orcidUrl && (
+            <>
+              <br />
+              <a
+                href={aboutMe.orcidUrl}
+                className="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="inline-flex items-center justify-center h-3.5 min-w-3.5 px-0.5 text-[9px] font-semibold border border-current rounded-sm leading-none">
+                  iD
+                </span>
+                orcid.org/0009-0005-3408-4622
+              </a>
+            </>
+          )}
           {aboutMe.kaggleUrl && (
             <>
               <br />

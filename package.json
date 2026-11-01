@@ -3,7 +3,7 @@
   "version": "1.0.0",
 "scripts": {
   "build": "next build",
-  "deploy": "npm run build && rm -rf docs && cp -r out docs && git add . && git commit -m 'Deploy to docs' && git push --force origin main"
+  "deploy": "npm run build && rm -rf docs && cp -r out docs && touch docs/.nojekyll && rm -rf out && git add -f docs && git commit -m 'Deploy to docs' && git push --force origin main"
 },
   "dependencies": {
     "lucide-react": "^0.469.0",

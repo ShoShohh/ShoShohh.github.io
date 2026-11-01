@@ -1,6 +1,7 @@
 export enum Section {
   Education = "education",
-  Experience = "experience",
+  PermanentEmployment = "permanent-employment",
+  FixedTermEmployment = "fixed-term-employment",
   Portfolio = "portfolio",
   Publication = "publication",
   News = "news",
@@ -20,11 +21,11 @@ export enum Section {
 export const sectionOrder = [
   Section.News,
   Section.Skill,
-  Section.Keyword,
   Section.Publication,
   Section.Speech,
   Section.Education,
-  Section.Experience,
+  Section.PermanentEmployment,
+  Section.FixedTermEmployment,
   Section.Intern,
   Section.ResearchAssistant,
   Section.Award,

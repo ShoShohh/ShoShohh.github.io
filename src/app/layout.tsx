@@ -1,6 +1,6 @@
+import './globals.css'
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Noto_Serif, PT_Serif } from "next/font/google";
-import "./globals.css";
 import { aboutMe } from "@/data/aboutme";
 import Link from "next/link";
 import { customMetadata } from "@/data/title-description";
@@ -41,12 +41,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head />
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${notoSerif.variable} ${ptSerif.variable} antialiased`}
       >
 
 <nav className="w-full p-4 text-right bg-[#FFFCF8] border-b border-neutral-200 dark:border-neutral-800">
-  {/* 英語 (ルート) */}
   <Link
     href="/"
     className="mr-4 text-sm text-blue-600 underline hover:text-blue-800"
@@ -54,7 +54,6 @@ export default function RootLayout({
     English
   </Link>
 
-  {/* 日本語 */}
   <Link
     href="/ja"
     className="text-sm text-blue-600 underline hover:text-blue-800"
