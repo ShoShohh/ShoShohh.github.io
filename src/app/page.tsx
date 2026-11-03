@@ -20,7 +20,6 @@ import { SkillEntry } from "@/components/skill-entry";
 import { skillData } from "@/data/skill";
 import { SpeechEntry } from "@/components/speech-entry";
 import { speechData } from "@/data/speech";
-import { TeachingAssistantEntry } from "@/components/teaching-assistant-entry";
 import { teachingAssistantData } from "@/data/teaching-assistant";
 import { AwardEntry } from "@/components/award-entry";
 import { awardData } from "@/data/award";
@@ -228,7 +227,7 @@ export default function Home() {
                         <h2 className="font-serif text-lg font-semibold mb-8 tracking-wide uppercase">
                           {sectionTitles[Section.Intern]}
                         </h2>
-                        <div className="space-y-4 text-sm text-zinc-700">
+                        <div className="space-y-12">
                           {internData.map((intern, index) => (
                             <InternEntry key={index} intern={intern} />
                           ))}
@@ -237,29 +236,17 @@ export default function Home() {
                     )
                   );
                 case Section.TeachingAssistant: {
-                  const hasTeachingService =
-                    teachingAssistantData.length > 0 || campusServiceData.length > 0;
+                  const teachingService = [...teachingAssistantData, ...campusServiceData];
                   return (
-                    hasTeachingService && (
+                    teachingService.length > 0 && (
                       <section key={sectionName} id={sectionName} className="border-t-2 border-zinc-300 pt-10">
                         <h2 className="font-serif text-lg font-semibold mb-8 tracking-wide uppercase">
                           {sectionTitles[Section.TeachingAssistant]}
                         </h2>
-                        <div className="space-y-8">
-                          {teachingAssistantData.length > 0 && (
-                            <div className="space-y-4 text-sm text-zinc-700">
-                              {teachingAssistantData.map((assistant, index) => (
-                                <TeachingAssistantEntry key={index} assistant={assistant} />
-                              ))}
-                            </div>
-                          )}
-                          {campusServiceData.length > 0 && (
-                            <div className="space-y-12">
-                              {campusServiceData.map((item, index) => (
-                                <ExperienceEntry key={`campus-${index}`} experience={item} />
-                              ))}
-                            </div>
-                          )}
+                        <div className="space-y-12">
+                          {teachingService.map((item, index) => (
+                            <ExperienceEntry key={index} experience={item} />
+                          ))}
                         </div>
                       </section>
                     )
@@ -287,7 +274,7 @@ export default function Home() {
                         <h2 className="font-serif text-lg font-semibold mb-8 tracking-wide uppercase">
                           Academic Society
                         </h2>
-                        <div className="space-y-4 text-sm text-zinc-700">
+                        <div className="space-y-12">
                           {academicSocietyData.map((society, index) => (
                             <AcademicSocietyEntry key={index} society={society} />
                           ))}
@@ -302,7 +289,7 @@ export default function Home() {
                         <h2 className="font-serif text-lg font-semibold mb-8 tracking-wide uppercase">
                           Research Assistant
                         </h2>
-                        <div className="space-y-4">
+                        <div className="space-y-12">
                           {researchAssistantData.map((ra, index) => (
                             <ResearchAssistantEntry key={index} ra={ra} />
                           ))}

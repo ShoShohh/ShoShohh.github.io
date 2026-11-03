@@ -1,4 +1,3 @@
-// src/components/qualification-entry.tsx
 import React from "react";
 
 export interface Qualification {
@@ -27,10 +26,10 @@ export function QualificationList({ items }: { items: Qualification[] }) {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-12">
       {blocks.map((block, blockIndex) =>
         block[0].group ? (
-          <div key={blockIndex} className="space-y-3 pt-2">
+          <div key={blockIndex} className="space-y-8">
             <h3 className="text-sm font-semibold text-zinc-800">{block[0].group}</h3>
             {block.map((qualification, index) => (
               <QualificationEntry key={index} qualification={qualification} />
@@ -48,37 +47,36 @@ export function QualificationList({ items }: { items: Qualification[] }) {
 
 export function QualificationEntry({ qualification }: QualificationEntryProps) {
   return (
-    <div className="text-sm text-zinc-700 leading-relaxed">
-      <p className="font-semibold">
-        {qualification.url ? (
-          <a
-            href={qualification.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline text-blue-600 hover:text-blue-800"
-          >
-            {qualification.title}
-          </a>
-        ) : (
-          qualification.title
-        )}
-      </p>
-      <p className="italic text-zinc-500 text-sm">
-        {qualification.date}
+    <div className="grid grid-cols-4 gap-x-2">
+      <span className="text-xs text-zinc-500 mt-1">{qualification.date}</span>
+      <div className="col-span-3 flex flex-col">
+        <h3 className="text-sm text-zinc-700 font-semibold leading-relaxed">
+          {qualification.url ? (
+            <a
+              href={qualification.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline text-blue-600 hover:text-blue-800"
+            >
+              {qualification.title}
+            </a>
+          ) : (
+            qualification.title
+          )}
+        </h3>
         {qualification.pdfUrl && (
-          <>
-            {"　"}
+          <div className="mt-2">
             <a
               href={qualification.pdfUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="underline text-blue-600 hover:text-blue-800 not-italic"
+              className="inline-flex items-center text-xs text-blue-600 hover:text-blue-800 underline"
             >
               {qualification.pdfLabel ?? "修了証"}
             </a>
-          </>
+          </div>
         )}
-      </p>
+      </div>
     </div>
   );
 }
