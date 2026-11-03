@@ -1,12 +1,4 @@
-export interface PermanentEmployment {
-  date: string;
-  title: string;
-  company: string;
-  description?: string;
-  advisor?: string;
-  manager?: string;
-  companyUrl?: string;
-  pdfUrl?: string;
-}
+import type { Experience } from "./experience";
 
-export const permanentEmploymentData: PermanentEmployment[] = [];
+/** Future permanent / full-time roles; merged into Work Experience when non-empty. */
+export const permanentEmploymentData: Experience[] = [];

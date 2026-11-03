@@ -9,6 +9,9 @@ import { newsData } from "@/data-ja/news";
 import { ExperienceEntry } from "@/components/experience-entry";
 import { experienceData } from "@/data-ja/experience";
 import { permanentEmploymentData } from "@/data-ja/permanent-employment";
+import { fellowshipData } from "@/data-ja/fellowship";
+import { campusServiceData } from "@/data-ja/campus-service";
+import { getVisibleTocSections } from "@/lib/visible-sections";
 import { PortfolioEntry } from "@/components/portfolio-entry";
 import { portfolioData } from "@/data-ja/portfolio";
 import { sectionOrder, Section } from "@/data-ja/section-order";
@@ -94,7 +97,7 @@ export default function Home() {
             )}
 
             {/* Table of Contents - after News */}
-            <TableOfContents sections={sectionOrder} isJapanese={true} />
+            <TableOfContents sections={getVisibleTocSections(true)} isJapanese={true} />
 
             {/* Map through sectionOrder to render sections in correct order */}
             {sectionOrder.map((sectionName) => {
@@ -135,15 +138,16 @@ export default function Home() {
                       </section>
                     )
                   );
-                case Section.PermanentEmployment:
+                case Section.Experience: {
+                  const workExperience = [...permanentEmploymentData, ...experienceData];
                   return (
-                    permanentEmploymentData.length > 0 && (
+                    workExperience.length > 0 && (
                       <section key={sectionName} id={sectionName} className="border-t-2 border-zinc-300 pt-10">
                         <h2 className="font-serif text-lg font-semibold mb-8 tracking-wide uppercase">
-                          {sectionTitles[Section.PermanentEmployment]}
+                          {sectionTitles[Section.Experience]}
                         </h2>
                         <div className="space-y-12">
-                          {permanentEmploymentData.map((experience, index) => (
+                          {workExperience.map((experience, index) => (
                             <ExperienceEntry
                               key={index}
                               experience={experience}
@@ -153,18 +157,19 @@ export default function Home() {
                       </section>
                     )
                   );
-                case Section.FixedTermEmployment:
+                }
+                case Section.Fellowship:
                   return (
-                    experienceData.length > 0 && (
+                    fellowshipData.length > 0 && (
                       <section key={sectionName} id={sectionName} className="border-t-2 border-zinc-300 pt-10">
                         <h2 className="font-serif text-lg font-semibold mb-8 tracking-wide uppercase">
-                          {sectionTitles[Section.FixedTermEmployment]}
+                          {sectionTitles[Section.Fellowship]}
                         </h2>
                         <div className="space-y-12">
-                          {experienceData.map((experience, index) => (
+                          {fellowshipData.map((fellowship, index) => (
                             <ExperienceEntry
                               key={index}
-                              experience={experience}
+                              experience={fellowship}
                             />
                           ))}
                         </div>
@@ -231,21 +236,35 @@ export default function Home() {
                       </section>
                     )
                   );
-                case Section.TeachingAssistant:
+                case Section.TeachingAssistant: {
+                  const hasTeachingService =
+                    teachingAssistantData.length > 0 || campusServiceData.length > 0;
                   return (
-                    teachingAssistantData.length > 0 && (
+                    hasTeachingService && (
                       <section key={sectionName} id={sectionName} className="border-t-2 border-zinc-300 pt-10">
                         <h2 className="font-serif text-lg font-semibold mb-8 tracking-wide uppercase">
                           {sectionTitles[Section.TeachingAssistant]}
                         </h2>
-                        <div className="space-y-4 text-sm text-zinc-700">
-                          {teachingAssistantData.map((assistant, index) => (
-                            <TeachingAssistantEntry key={index} assistant={assistant} />
-                          ))}
+                        <div className="space-y-8">
+                          {teachingAssistantData.length > 0 && (
+                            <div className="space-y-4 text-sm text-zinc-700">
+                              {teachingAssistantData.map((assistant, index) => (
+                                <TeachingAssistantEntry key={index} assistant={assistant} />
+                              ))}
+                            </div>
+                          )}
+                          {campusServiceData.length > 0 && (
+                            <div className="space-y-12">
+                              {campusServiceData.map((item, index) => (
+                                <ExperienceEntry key={`campus-${index}`} experience={item} />
+                              ))}
+                            </div>
+                          )}
                         </div>
                       </section>
                     )
                   );
+                }
                 case Section.Award:
                   return (
                     awardData.length > 0 && (

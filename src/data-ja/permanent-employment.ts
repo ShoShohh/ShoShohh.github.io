@@ -1,12 +1,4 @@
-export interface PermanentEmployment {
-  date: string;
-  title: string;
-  company: string;
-  description?: string;
-  advisor?: string;
-  manager?: string;
-  companyUrl?: string;
-  pdfUrl?: string;
-}
+import type { Experience } from "./experience";
 
-export const permanentEmploymentData: PermanentEmployment[] = [];
+/** 将来の無期・本務職歴。中身があるとき職歴セクション先頭に表示。 */
+export const permanentEmploymentData: Experience[] = [];

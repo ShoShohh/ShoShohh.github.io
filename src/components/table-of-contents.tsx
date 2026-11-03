@@ -14,14 +14,14 @@ const sectionNames: Record<Section, { en: string; ja: string }> = {
   [Section.Publication]: { en: "Publications", ja: "論文" },
   [Section.Speech]: { en: "Speech", ja: "講演" },
   [Section.Education]: { en: "Education", ja: "学歴" },
-  [Section.PermanentEmployment]: { en: "Work Experience (Permanent)", ja: "職歴（無期雇用）" },
-  [Section.FixedTermEmployment]: { en: "Work Experience (Fixed-term)", ja: "職歴（有期雇用）" },
+  [Section.Experience]: { en: "Work Experience", ja: "職歴" },
+  [Section.Fellowship]: { en: "Fellowships", ja: "奨学金・フェローシップ" },
   [Section.Intern]: { en: "Internship", ja: "インターンシップ" },
   [Section.ResearchAssistant]: { en: "Research Assistant", ja: "リサーチアシスタント" },
   [Section.Award]: { en: "Award", ja: "受賞" },
   [Section.Community]: { en: "Community / Podcast", ja: "コミュニティ・ポッドキャスト" },
   [Section.Outreach]: { en: "Outreach / Public Engagement", ja: "アウトリーチ・社会貢献" },
-  [Section.TeachingAssistant]: { en: "Teaching Assistant", ja: "ティーチングアシスタント" },
+  [Section.TeachingAssistant]: { en: "Teaching & Academic Service", ja: "教育・学内活動" },
   [Section.Qualification]: { en: "Qualification / Test Score", ja: "資格・テストスコア" },
   [Section.AcademicSociety]: { en: "Academic Society", ja: "所属学協会" },
   [Section.Portfolio]: { en: "Portfolio", ja: "ポートフォリオ" },
@@ -35,25 +35,6 @@ export function TableOfContents({ sections, isJapanese = false }: TableOfContent
     }
   };
 
-  // 目次に含めるセクション（KeywordsとNewsは除外）
-  const tableOfContentsSections = [
-    Section.Skill,
-    Section.Publication,
-    Section.Speech,
-    Section.Education,
-    Section.PermanentEmployment,
-    Section.FixedTermEmployment,
-    Section.Intern,
-    Section.ResearchAssistant,
-    Section.Award,
-    Section.Community,
-    Section.Outreach,
-    Section.TeachingAssistant,
-    Section.Qualification,
-    Section.AcademicSociety,
-    Section.Portfolio,
-  ].filter(section => sections.includes(section));
-
   return (
     <div className="bg-white rounded-lg shadow-sm border border-zinc-200 p-6 mb-8">
       <h3 className="font-serif text-lg font-semibold mb-4 tracking-wide uppercase text-zinc-800">
@@ -61,7 +42,7 @@ export function TableOfContents({ sections, isJapanese = false }: TableOfContent
       </h3>
       <nav>
         <ul className="space-y-2">
-          {tableOfContentsSections.map((section) => (
+          {sections.map((section) => (
             <li key={section}>
               <button
                 onClick={() => scrollToSection(section)}
@@ -75,4 +56,4 @@ export function TableOfContents({ sections, isJapanese = false }: TableOfContent
       </nav>
     </div>
   );
-} 
+}

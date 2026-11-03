@@ -1,1 +1,1 @@
-export const cvUpdateDate = "2025年10月21日"; // CVの最終更新日（手動更新）
+export const cvUpdateDate = "2026年11月4日"; // CVの最終更新日（手動更新）
