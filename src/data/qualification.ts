@@ -28,9 +28,9 @@ export const qualificationData: Qualification[] = [
     pdfLabel: "Certificate",
   },
   {
-    group: matsuoInstitute,
-    title: "AI Engineering Fundamentals Course",
-    date: "Completed",
+    group: matsuo,
+    title: "AI Engineering Fundamentals 2026 Summer",
+    date: "Summer 2026",
     pdfUrl: "/Certificate_AIエンジニアリング基礎講座.pdf",
     pdfLabel: "Certificate",
   },

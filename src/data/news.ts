@@ -22,7 +22,7 @@ export const newsData: News[] = [
         sectionId: "qualification",
         sectionLabel: "Qualification / Test Score",
         detail:
-          "Added Matsuo Institute certificates: AI Quant Trading Course 2026 Summer and AI Engineering Fundamentals Course.",
+          "Added AI Quant Trading Course 2026 Summer (Matsuo Institute) and AI Engineering Fundamentals 2026 Summer (Matsuo–Iwasawa Lab).",
       },
     ],
   },
