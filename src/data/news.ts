@@ -16,27 +16,13 @@ export interface News {
 
 export const newsData: News[] = [
   {
-    date: "Nov. 1, 2026",
+    date: "Nov. 10, 2026",
     updates: [
-      {
-        sectionId: "intern",
-        sectionLabel: "Internship",
-        detail: "Added Mitsubishi UFJ Trust Investment Technology Institute (MTEC), Oct. 2026.",
-      },
       {
         sectionId: "qualification",
         sectionLabel: "Qualification / Test Score",
         detail:
-          "Added the Matsuo–Iwasawa Lab Deep Generative Models (Deep Learning Applied Course) 2026 Summer certificate.",
-      },
-      {
-        sectionId: "community",
-        sectionLabel: "Community / Podcast",
-        detail: "Added guest Fuyuto Miyake (episode #48).",
-      },
-      {
-        sectionLabel: "Contact",
-        detail: "Added ORCID.",
+          "Added Matsuo Institute certificates: AI Quant Trading Course 2026 Summer and AI Engineering Fundamentals Course.",
       },
     ],
   },
