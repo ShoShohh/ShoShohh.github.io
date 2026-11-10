@@ -1,6 +1,7 @@
 // src/data/qualification.ts
 import { Qualification } from "@/components/qualification-entry";
 
+const matsuoInstitute = "株式会社松尾研究所（講座）";
 const matsuo =
   "東京大学大学院工学系研究科 松尾・岩澤研究室（Deep Learning 講座）";
 
@@ -17,6 +18,21 @@ export const qualificationData: Qualification[] = [
     title: "TOEIC L&R score 735",
     date: "2022年3月",
     url: "https://www.iibc-global.org/toeic/toeic_program.html",
+  },
+  {
+    group: matsuoInstitute,
+    title: "AIクオンツトレード講座 2026 Summer",
+    date: "2026年夏",
+    url: "https://matsuo-institute.com/seminar/ai-quant-trading/",
+    pdfUrl: "/Certificate_AIクオンツトレード講座_2026Summer.pdf",
+    pdfLabel: "修了証",
+  },
+  {
+    group: matsuoInstitute,
+    title: "AIエンジニアリング基礎講座",
+    date: "修了",
+    pdfUrl: "/Certificate_AIエンジニアリング基礎講座.pdf",
+    pdfLabel: "修了証",
   },
   {
     group: matsuo,

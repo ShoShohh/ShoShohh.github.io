@@ -1,6 +1,7 @@
 // src/data/qualification.ts
 import { Qualification } from "@/components/qualification-entry";
 
+const matsuoInstitute = "Matsuo Institute (courses)";
 const matsuo =
   "Matsuo–Iwasawa Lab, Graduate School of Engineering, The University of Tokyo (Deep Learning courses)";
 
@@ -17,6 +18,21 @@ export const qualificationData: Qualification[] = [
     title: "TOEIC L&R score 735",
     date: "Mar. 2022",
     url: "https://www.iibc-global.org/toeic/toeic_program.html",
+  },
+  {
+    group: matsuoInstitute,
+    title: "AI Quant Trading Course 2026 Summer",
+    date: "Summer 2026",
+    url: "https://matsuo-institute.com/seminar/ai-quant-trading/",
+    pdfUrl: "/Certificate_AIクオンツトレード講座_2026Summer.pdf",
+    pdfLabel: "Certificate",
+  },
+  {
+    group: matsuoInstitute,
+    title: "AI Engineering Fundamentals Course",
+    date: "Completed",
+    pdfUrl: "/Certificate_AIエンジニアリング基礎講座.pdf",
+    pdfLabel: "Certificate",
   },
   {
     group: matsuo,
