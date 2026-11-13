@@ -22,7 +22,7 @@ export const newsData: News[] = [
         sectionId: "outreach",
         sectionLabel: "Outreach / Public Engagement",
         detail:
-          "Added an online bone marrow bank talk at a university in Miyagi (Nov. 13, 2026).",
+          "Added a bone marrow bank talk at a university in Miyagi (Nov. 13, 2026).",
       },
     ],
   },

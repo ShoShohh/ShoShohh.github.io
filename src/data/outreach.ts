@@ -32,7 +32,7 @@ export const outreachData: OutreachItem[] = [
     appearances: [
       {
         date: "Nov. 13, 2026",
-        place: "University in Miyagi (online)",
+        place: "University in Miyagi",
         links: [
           {
             label: "Reaching younger generations about bone marrow donation: reflections from an online talk in Miyagi",

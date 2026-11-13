@@ -31,7 +31,7 @@ export const outreachData: OutreachItem[] = [
     appearances: [
       {
         date: "2026年11月13日",
-        place: "宮城県内の大学（オンライン）",
+        place: "宮城県内の大学",
         links: [
           {
             label: "若い世代に骨髄提供を届ける：宮城にてオンライン講演を通じて感じたこと",
