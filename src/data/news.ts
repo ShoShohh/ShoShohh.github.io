@@ -16,13 +16,13 @@ export interface News {
 
 export const newsData: News[] = [
   {
-    date: "Nov. 10, 2026",
+    date: "Nov. 13, 2026",
     updates: [
       {
-        sectionId: "qualification",
-        sectionLabel: "Qualification / Test Score",
+        sectionId: "outreach",
+        sectionLabel: "Outreach / Public Engagement",
         detail:
-          "Added AI Quant Trading Course 2026 Summer (Matsuo Institute) and AI Engineering Fundamentals 2026 Summer (Matsuo–Iwasawa Lab).",
+          "Added an online bone marrow bank talk at a university in Miyagi (Nov. 13, 2026).",
       },
     ],
   },

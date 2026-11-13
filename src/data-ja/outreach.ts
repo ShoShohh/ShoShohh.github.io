@@ -30,6 +30,16 @@ export const outreachData: OutreachItem[] = [
     appearancesHeading: "語り部・出演",
     appearances: [
       {
+        date: "2026年11月13日",
+        place: "宮城県内の大学（オンライン）",
+        links: [
+          {
+            label: "若い世代に骨髄提供を届ける：宮城にてオンライン講演を通じて感じたこと",
+            url: "https://note.com/sho_77/n/n05580716aaab",
+          },
+        ],
+      },
+      {
         date: "2026年9月4日",
         place: "東京都内の看護専門学校",
         links: [

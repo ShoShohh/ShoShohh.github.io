@@ -31,6 +31,16 @@ export const outreachData: OutreachItem[] = [
     appearanceColumns: { date: "Date", place: "Venue / medium", record: "Record" },
     appearances: [
       {
+        date: "Nov. 13, 2026",
+        place: "University in Miyagi (online)",
+        links: [
+          {
+            label: "Reaching younger generations about bone marrow donation: reflections from an online talk in Miyagi",
+            url: "https://note.com/sho_77/n/n05580716aaab",
+          },
+        ],
+      },
+      {
         date: "Sep. 4, 2026",
         place: "Nursing school in Tokyo",
         links: [
